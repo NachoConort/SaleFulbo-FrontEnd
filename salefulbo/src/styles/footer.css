@@ -1,0 +1,28 @@
+:root {
+    --text: #131711;
+    --background: #f7faf6;
+    --primary: #7eb757;
+    --secondary: #afdc90;
+    --accent: #9bde6b;
+}
+
+.footer {
+    height: auto;
+    width: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,43 @@
+:root{
+  --text: #131711;
+  --background: #f7faf6;
+  --primary: #7eb757;
+  --secondary: #afdc90;
+  --accent: #9bde6b;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+span {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal; 
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 5px;
+  text-decoration: none;
+  background-color: var(--accent);
+  color: var(--text);
+}
+
+a:hover {
+  background-color: var(--primary);
+}
