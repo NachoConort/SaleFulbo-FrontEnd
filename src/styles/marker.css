@@ -1,0 +1,11 @@
+.divMarker {
+    border: 'solid 2px #0078FF';
+    background-color: '#0078FF';
+    color: 'white';
+    padding: '5px 10px';
+    border-radius: '50%';
+    display: 'inline-flex';
+    text-align: 'center';
+    align-items: 'center';
+    justify-content: 'center'
+}
