@@ -1,0 +1,33 @@
+:root{
+    --text: #131711;
+    --background: #f7faf6;
+    --primary: #7eb757;
+    --secondary: #afdc90;
+    --accent: #9bde6b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+}
+
+span {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 40px;
+}
+
+a {
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: var(--accent);
+    color: var(--text);
+}
+
+a:hover {
+    background-color: var(--primary);
+}

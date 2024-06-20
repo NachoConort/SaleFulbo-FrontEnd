@@ -1,0 +1,76 @@
+.formContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid var(--primary);
+  background-color: var(--background);
+  overflow: hidden;
+  width: 50%;
+  height: 90%;
+  padding: 20px;
+}
+.changeButton {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  border-radius: 30px;
+  border: 2px solid var(--primary);
+  margin-top: -30px;
+}
+#selectedButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--accent);
+  height: 100%;
+  width: 50%;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.buttonChange {
+  cursor: pointer;
+  padding: 10px;
+  background: transparent;
+  border: 0;
+  outline: none;  
+  z-index: 3;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  transition: 0.5s;
+}
+.inputForm {
+  padding: 10px;
+  width: 70%;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid var(--accent);
+  border-left: 0;
+  outline: none;
+  background: transparent;
+}
+.buttonSubmit {
+  cursor: pointer;
+  width: 70%;
+  padding: 10px;
+  margin-top: 10px;
+  background: var(--primary);
+  border-radius: 30px;
+  border: none;
+}
+#formLogin {
+  position: relative;
+  left: 0px;
+}
+#formRegister {
+  position: absolute;
+  left: 100%;
+}
