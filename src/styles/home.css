@@ -35,7 +35,7 @@ form {
     justify-content: center;
 }
 
-.searchButton {
+#searchButton {
     width: 70px;
     border-radius: 0px 20px 20px 0px;
     border-width: 2px 2px 2px 0px;
@@ -45,9 +45,10 @@ form {
     justify-content: center;
     align-items: center;
     background-color: var(--accent);
+    padding: 0;
 }
 
-.searchButton:hover {
+#searchButton:hover {
     background-color: var(--primary);
 }
 

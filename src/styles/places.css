@@ -1,11 +1,3 @@
-:root{
-    --text: #131711;
-    --background: #f7faf6;
-    --primary: #7eb757;
-    --secondary: #afdc90;
-    --accent: #9bde6b;
-}
-
 .placesContainer {
     display: flex;
     flex-direction: column;

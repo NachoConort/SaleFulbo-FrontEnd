@@ -12,7 +12,6 @@ export default class Places extends Component{
     async componentDidMount() {
         const response = await axios('http://localhost:4000/users');
         this.setState({users: response.data});
-        console.log(this.state.users)
     }
 
     render() {
