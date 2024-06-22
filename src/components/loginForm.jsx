@@ -31,9 +31,11 @@ function LoginForm () {
   )
 }
 
-const formLogin = document.getElementById("formLogin");
-const formRegister = document.getElementById("formRegister");
-const selectedButton = document.getElementById("selectedButton");
+document.addEventListener("DOMContentLoaded", function () {
+  const formLogin = document.getElementById("formLogin");
+  const formRegister = document.getElementById("formRegister");
+  const selectedButton = document.getElementById("selectedButton");
+})
 
 function showLogin() {
   formLogin.style.left = "0px";
