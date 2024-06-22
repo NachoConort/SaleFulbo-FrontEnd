@@ -6,13 +6,12 @@ import Login from './components/login';
 import Reserve from './components/reserve';
 
 function App() {
-
   return (
     <Router>
       <Routes>
         <Route path='/' exact element={<Home/>}/>
         <Route path='/login' exact element={<Login/>}/>
-        <Route path='/reserve' exact element={<Reserve/>}/>
+        <Route path='/reserve/:id' exact element={<Reserve/>}/>
       </Routes>
     </Router>
   )

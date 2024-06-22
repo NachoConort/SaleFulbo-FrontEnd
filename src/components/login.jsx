@@ -1,23 +1,12 @@
-import { Link } from 'react-router-dom';
-
 import LoginForm from './loginForm';
 import '../styles/login.css'
+import Header from './header';
 
 function Login() {
     return(
-        <div>
+        <div className='bodyContainer'>
             <div>
-                <header>
-                    <div>
-                        <span>Sale fulbo</span>
-                    </div>
-                    <div>
-                        <h1>Alquiler de canchas en Tucumán</h1>
-                    </div>
-                    <div>
-                        <Link to="/">Volver</Link>
-                    </div>
-                </header>
+                <Header/>
             </div>
             <div className='container'>
                 <LoginForm />

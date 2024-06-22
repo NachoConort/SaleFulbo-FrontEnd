@@ -1,9 +1,8 @@
-:root{
-    --text: #131711;
-    --background: #f7faf6;
-    --primary: #7eb757;
-    --secondary: #afdc90;
-    --accent: #9bde6b;
+.fatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
 }
 
 .placesContainer {
@@ -14,6 +13,7 @@
     border: 2px solid var(--primary);
     border-radius: 10px;
     background-color: var(--background);
+    width: 80%;
 }
 
 .user {
