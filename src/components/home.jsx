@@ -2,7 +2,7 @@ import '../styles/home.css';
 import Footer from './footer';
 
 import Header from './header';
-import Main from './main';
+import Places from './places';
 
 function Home() {
     return(
@@ -11,7 +11,7 @@ function Home() {
                 <Header/>
             </div>
             <div>
-                <Main/>
+                <Places/>
             </div>
             <div>
                 <Footer/>

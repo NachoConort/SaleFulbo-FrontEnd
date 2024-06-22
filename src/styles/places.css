@@ -1,3 +1,10 @@
+.fatherContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
 .placesContainer {
     display: flex;
     flex-direction: column;
@@ -6,6 +13,7 @@
     border: 2px solid var(--primary);
     border-radius: 10px;
     background-color: var(--background);
+    width: 80%;
 }
 
 .user {
