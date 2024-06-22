@@ -4,7 +4,7 @@ import Header from './header';
 
 function Login() {
     return(
-        <div>
+        <div className='bodyContainer'>
             <div>
                 <Header/>
             </div>
