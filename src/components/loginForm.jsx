@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../styles/loginForm.css'
 
 import axios from 'axios';
@@ -32,9 +31,11 @@ function LoginForm () {
   )
 }
 
-const formLogin = document.getElementById("formLogin");
-const formRegister = document.getElementById("formRegister");
-const selectedButton = document.getElementById("selectedButton");
+document.addEventListener("DOMContentLoaded", function () {
+  const formLogin = document.getElementById("formLogin");
+  const formRegister = document.getElementById("formRegister");
+  const selectedButton = document.getElementById("selectedButton");
+})
 
 function showLogin() {
   formLogin.style.left = "0px";
@@ -63,7 +64,7 @@ function login(e) {
     if (!userValid) {
       logintxt.innerHTML = "Email y/o contraseña incorrectos!";
     } else {
-      location.pathname = '/'
+      location.pathname = `/logued/${userValid._id}`
 
       formLogin.reset();
     }

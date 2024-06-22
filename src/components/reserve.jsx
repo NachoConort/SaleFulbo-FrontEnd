@@ -24,6 +24,8 @@ function Reserve() {
         footballType: ""
     });
 
+    const [reservations, setReservations] = useState([]);
+
     const url = window.location.pathname;
     const userId = url.substring(url.lastIndexOf('/') + 1);
 
@@ -71,6 +73,19 @@ function Reserve() {
         }
     }, [cancha]);
 
+    useEffect(() => {
+        const fetchReservations = async () => {
+            try {
+                const { data } = await axios.get(`http://localhost:4000/reserve/${userId}`);
+                setReservations(data);
+            } catch (error) {
+                console.error("Error fetching reservations:", error);
+            }
+        };
+
+        fetchReservations();
+    }, [userId]);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setReserve(prevReserve => ({
@@ -78,9 +93,19 @@ function Reserve() {
             [name]: value
         }));
     };
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const isTimeSlotAvailable = reservations.every(reservation => {
+            return !(reservation.date === reserve.date && reservation.time === reserve.time);
+        });
+
+        if (!isTimeSlotAvailable) {
+            alert('El horario seleccionado ya está reservado. Por favor, elige otro horario.');
+            return;
+        }
+
         try {
             await axios.post(`http://localhost:4000/reserve/${userId}`, reserve);
             alert('Reserva confirmada!');
