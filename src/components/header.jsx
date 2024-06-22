@@ -10,6 +10,8 @@ function Header() {
             return '/';
         } else if (location.pathname.startsWith('/reserve/')) {
             return '/';
+        } else if (location.pathname.startsWith('/logued/')) {
+            return '/';
         }
     };
 
@@ -20,6 +22,8 @@ function Header() {
             return 'Volver';
         } else if (location.pathname.startsWith('/reserve/')) {
             return 'Volver';
+        } else if (location.pathname.startsWith('/logued/')) {
+            return 'Cerrar sesión';
         }
     };
 

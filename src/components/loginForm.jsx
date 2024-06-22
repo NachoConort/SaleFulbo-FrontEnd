@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../styles/loginForm.css'
 
 import axios from 'axios';
@@ -63,7 +62,7 @@ function login(e) {
     if (!userValid) {
       logintxt.innerHTML = "Email y/o contraseña incorrectos!";
     } else {
-      location.pathname = '/'
+      location.pathname = `/logued/${userValid._id}`
 
       formLogin.reset();
     }
