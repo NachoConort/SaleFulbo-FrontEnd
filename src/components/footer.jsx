@@ -1,3 +1,9 @@
+import racingIcon from '../assets/racing.png'
+
+function easterEgg() {
+    return alert("Asociate a Racing (tenemos hambre) => https://www.racingclub.com.ar/socios/asociate/")
+}
+
 function Footer() {
     return(
         <footer>
@@ -18,6 +24,9 @@ function Footer() {
                     <h6>Programador Universitario</h6>
                     <p>tomas.molina465@gmail.com</p>
                 </div>
+            </div>
+            <div>
+                <img src={racingIcon} alt="" width="80px" className='spin' onClick={easterEgg}/>
             </div>
             <div>
                 <h2><span>Sale fulbo</span></h2>
