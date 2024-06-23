@@ -25,23 +25,21 @@ function Logued() {
         const getNombreCancha = async () => {
             try {
                 const { data } = await axios.get(`http://localhost:4000/users/${userId}`);
-                const date = new Date();
-                const day = date.toLocaleDateString()
-                
+                const today = new Date();
+                today.setHours(0, 0, 0, 0); // Establece la hora a 00:00:00 para comparar solo la fecha
+    
                 const addOneDay = (date) => {
                     const newDate = new Date(date);
                     newDate.setDate(newDate.getDate() + 1);
                     return newDate;
                 };
-
+    
                 const filteredReservas = data.reserves.filter(reserve => {
                     const reserveDate = new Date(reserve.date);
                     const reserveDay = addOneDay(reserveDate);
-                    const reserveDayFormat = reserveDay.toLocaleDateString();
-                    return reserveDayFormat >= day;
+                    return reserveDay >= today;
                 });
-
-
+    
                 setCancha({
                     address: data.address,
                     name: data.name,
@@ -52,14 +50,13 @@ function Logued() {
                     pricing: data.pricing,
                     reserves: filteredReservas
                 });
-
+    
             } catch (error) {
                 console.error("Error fetching cancha data:", error);
             }
         };
-
+    
         getNombreCancha();
-
     }, [userId]);
 
     const handleChange = (e) => {
@@ -117,27 +114,69 @@ function Logued() {
                         <ul>
                             <li>
                                 <label htmlFor="name">Nuevo nombre</label>
-                                <input type="text" id="name" name="name" onChange={handleChange}/>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    onChange={handleChange} 
+                                    className="inputPersonalized"
+                                    placeholder="Ingresa tu nuevo nombre"
+                                />
                             </li>
                             <li>
                                 <label htmlFor="address">Nueva dirección</label>
-                                <input type="text" id="address" name="address" onChange={handleChange}/>
+                                <input 
+                                    type="text" 
+                                    id="address" 
+                                    name="address" 
+                                    onChange={handleChange} 
+                                    className="inputPersonalized"
+                                    placeholder="Ingresa tu nueva dirección"
+                                />
                             </li>
                             <li>
                                 <label htmlFor="opentime">Nuevo horario de apertura</label>
-                                <input type="text" id="opentime" name="opentime" onChange={handleChange}/>
+                                <input 
+                                    type="text" 
+                                    id="opentime" 
+                                    name="opentime" 
+                                    onChange={handleChange} 
+                                    className="inputPersonalized"
+                                    placeholder="Ingresa un horario"
+                                />
                             </li>
                             <li>
                                 <label htmlFor="closetime">Nuevo horario de cierre</label>
-                                <input type="text" id="closetime" name="closetime" onChange={handleChange}/>
+                                <input 
+                                    type="text" 
+                                    id="closetime" 
+                                    name="closetime" 
+                                    onChange={handleChange} 
+                                    className="inputPersonalized"
+                                    placeholder="Ingresa un horario"
+                                />
                             </li>
                             <li>
                                 <label htmlFor="pricing">Nuevo precio</label>
-                                <input type="text" id="pricing" name="pricing" onChange={handleChange}/>
+                                <input 
+                                    type="text" 
+                                    id="pricing" 
+                                    name="pricing" 
+                                    onChange={handleChange} 
+                                    className="inputPersonalized"
+                                    placeholder="Ingresa tu nuevo precio"
+                                />
                             </li>
                             <li>
                                 <label htmlFor="password">Nueva contraseña</label>
-                                <input type="text" id="password" name="password" onChange={handleChange}/>
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    onChange={handleChange} 
+                                    className="inputPersonalized"
+                                    placeholder="Ingresa tu nueva contraseña"
+                                />
                             </li>
                             <li>
                                 <button type="submit">Guardar datos</button>
@@ -149,10 +188,14 @@ function Logued() {
                     <h3>Reservas pendientes:</h3>
                     {cancha.reserves.map((reserve, index) => (
                         <div key={index} className="reserve">
-                            <p>{reserve.email}</p>
-                            <p>{reserve.date}</p>
-                            <p>{reserve.time}</p>
-                            <p>{reserve.footballType}</p>
+                            <div className="nameContainer">
+                                <h5>Reserva a nombre de {reserve.name}</h5>
+                                <p id="infoReserve">{reserve.email}</p>
+                            </div>
+                            <div className="reserveInfoContainer">
+                                <p id="infoReserve">Día: {reserve.date}. Hora: {reserve.time}hs.</p>
+                                <p id="infoReserve">Fútbol: {reserve.footballType}</p>
+                            </div>
                             <button onClick={() => eliminarReserva(reserve.email)}>Eliminar reserva</button>
                         </div>
                     ))}

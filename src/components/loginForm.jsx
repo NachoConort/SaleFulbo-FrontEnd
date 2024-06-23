@@ -7,8 +7,8 @@ function LoginForm () {
     <div className='formContainer'>
       <div className='changeButton'>
         <div id='selectedButton'></div>
-        <button className='buttonChange' onClick={showLogin}>Iniciar Sesión</button>
-        <button className='buttonChange' onClick={showRegister}>Registrarse</button>
+        <button id='buttonChange' onClick={showLogin}>Iniciar Sesión</button>
+        <button id='buttonChange' onClick={showRegister}>Registrarse</button>
       </div>
       <form className='form' id='formLogin'>
         <input type="email" className='inputForm' id='nameLogin' placeholder="Email" required/>

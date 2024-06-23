@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 50%;
 }
 
 form ul {
@@ -17,4 +18,9 @@ form li {
     flex-direction: column;
     font-size: 18px;
     padding: 10px 0px;
+}
+
+.reserveContainerFather {
+    display: flex;
+    justify-content: center;
 }
