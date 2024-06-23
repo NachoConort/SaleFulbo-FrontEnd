@@ -25,6 +25,23 @@ function Logued() {
         const getNombreCancha = async () => {
             try {
                 const { data } = await axios.get(`http://localhost:4000/users/${userId}`);
+                const date = new Date();
+                const day = date.toLocaleDateString()
+                
+                const addOneDay = (date) => {
+                    const newDate = new Date(date);
+                    newDate.setDate(newDate.getDate() + 1);
+                    return newDate;
+                };
+
+                const filteredReservas = data.reserves.filter(reserve => {
+                    const reserveDate = new Date(reserve.date);
+                    const reserveDay = addOneDay(reserveDate);
+                    const reserveDayFormat = reserveDay.toLocaleDateString();
+                    return reserveDayFormat >= day;
+                });
+
+
                 setCancha({
                     address: data.address,
                     name: data.name,
@@ -33,7 +50,7 @@ function Logued() {
                     user: data.user,
                     password: data.password,
                     pricing: data.pricing,
-                    reserves: data.reserves
+                    reserves: filteredReservas
                 });
 
             } catch (error) {
@@ -129,7 +146,7 @@ function Logued() {
                     </form>
                 </div>
                 <div className="reservesContainer">
-                    <h3>Reservas:</h3>
+                    <h3>Reservas pendientes:</h3>
                     {cancha.reserves.map((reserve, index) => (
                         <div key={index} className="reserve">
                             <p>{reserve.email}</p>
