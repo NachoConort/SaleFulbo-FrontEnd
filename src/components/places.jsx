@@ -51,6 +51,9 @@ export default class Places extends Component{
                                 <p><img src={timeIcon} alt="timeIcon" width="25px"/> {user.openTime}Hs. - {user.closeTime}Hs.</p>
                                 <p><img src={priceIcon} alt="priceIcon" width="25px"/> Precio por hora: ${user.pricing}</p>
                             </div>
+                            <div>
+                                <h2 id='child'><span>Reservar cancha</span></h2>
+                            </div>
                         </Link>
                     ))}
                 </div>

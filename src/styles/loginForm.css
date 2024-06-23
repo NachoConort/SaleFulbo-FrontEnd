@@ -39,6 +39,11 @@
   outline: none;  
   z-index: 3;
 }
+
+#buttonChange:hover {
+  box-shadow: none;
+}
+
 .form {
   display: flex;
   flex-direction: column;
